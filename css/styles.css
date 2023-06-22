@@ -348,6 +348,10 @@ textarea {
   line-height: 40px;
   color: var(--iris-color);
 }
+.menu-block .social-list {
+  justify-content: flex-start;
+  gap: 56px;
+}
 
 .address {
   font-style: normal;
@@ -416,6 +420,7 @@ textarea {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 72px;
 }
 .features .list .item .title-three {
   margin-bottom: 8px;
@@ -528,8 +533,11 @@ textarea {
   align-items: center;
   gap: 16px;
 }
+.footer .form .footer-label {
+  width: 100%;
+}
 .footer .form .input {
-  width: 320px;
+  width: 100%;
   padding-left: 16px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
@@ -548,7 +556,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 100%;
+  width: 408px;
   min-height: 584px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -663,6 +671,18 @@ textarea {
   color: var(--slate-color);
 }
 
+@media (min-width: 320px) and (max-width: 427px) {
+  .menu-block .social-list {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .menu-block .address .item:first-child {
+    font-size: 24px;
+  }
+  .modal-content {
+    width: 100%;
+  }
+}
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -691,7 +711,9 @@ textarea {
     margin-bottom: 36px;
   }
   .features .list {
-    gap: 24px;
+    row-gap: 72px;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
   }
   .features .list .item {
     flex-basis: calc((100% - 24px) / 2);
@@ -716,8 +738,8 @@ textarea {
     flex-direction: row;
     gap: 24px;
   }
-  .modal-content {
-    width: 408px;
+  .footer .form .footer-label {
+    width: 320px;
   }
   .portfolio {
     padding: 64px 0 96px;
@@ -796,6 +818,9 @@ textarea {
   .footer .social {
     margin-right: 80px;
   }
+  .footer .form .footer-label {
+    width: 100%;
+  }
   .footer .form .input {
     width: 264px;
   }
@@ -809,8 +834,8 @@ textarea {
     margin-bottom: 72px;
   }
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/img-name@2x.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/img-name@2x.jpg);
   }
 }

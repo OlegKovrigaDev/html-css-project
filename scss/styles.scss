@@ -335,6 +335,10 @@ textarea {
         }
       }
     }
+    .social-list {
+      justify-content: flex-start;
+      gap: 56px;
+    }
   }
 }
 .address {
@@ -405,6 +409,7 @@ textarea {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 72px;
     .item {
       .title-three {
         margin-bottom: 8px;
@@ -517,8 +522,11 @@ textarea {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    .footer-label {
+      width: 100%;
+    }
     .input {
-      width: 320px;
+      width: 100%;
       padding-left: 16px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     }
@@ -538,7 +546,7 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    width: 100%;
+    width: 408px;
     min-height: 584px;
     background: #fcfcfc;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -665,6 +673,26 @@ textarea {
     }
   }
 }
+@media (min-width: 320px) and (max-width: 427px) {
+  .menu {
+    &-block {
+      .social-list {
+        justify-content: space-between;
+        gap: 0;
+      }
+      .address{
+        .item:first-child {
+          font-size: 24px;
+        }
+      } 
+    }
+  }
+  .modal {
+    &-content {
+      width: 100%;
+    }
+  }
+}
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -700,7 +728,8 @@ textarea {
   }
   .features {
     .list {
-      gap: 24px;
+      row-gap: 72px;
+      column-gap: 24px;
       .item {
         flex-basis: calc((100% - 24px) / 2);
         .title-three {
@@ -725,11 +754,9 @@ textarea {
     .form {
       flex-direction: row;
       gap: 24px;
-    }
-  }
-  .modal {
-    &-content {
-      width: 408px;
+      .footer-label {
+        width: 320px;
+      }
     }
   }
   .portfolio {
@@ -813,6 +840,9 @@ textarea {
       margin-right: 80px;
     }
     .form {
+      .footer-label {
+        width: 100%;
+      }
       .input {
         width: 264px;
       }
@@ -831,9 +861,14 @@ textarea {
   }
 }
 
-
-@media (min-resolution: 192dpi) {
-  .hero{
-    background-image: url(../images/img-name@2x.jpg);
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/img-name@2x.jpg);
   }
 }
